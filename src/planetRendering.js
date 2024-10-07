@@ -314,7 +314,7 @@ export function renderPlanet (filePath) {
 
     //filePath is the planetName
 
-    fetch("http://exosky-backend.eastus.cloudapp.azure.com:5000/render?index=" + filePath, {
+    fetch("/api/render?index=" + filePath, {
         method: 'GET',
         mode: 'cors',  // This allows handling of the response if the server supports it
         headers: {
