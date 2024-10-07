@@ -1,0 +1,18 @@
+{
+    "public": true,
+    "rewrites": [
+      {
+        "source": "/Data/:path*",
+        "destination": "/public/Data/:path*"
+      },
+      {
+        "source": "/Textures/:path*",
+        "destination": "/public/Textures/:path*"
+      },
+      {
+        "source": "/:path*",
+        "destination": "/public/:path*"
+      }
+    ]
+  }
+  
