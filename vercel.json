@@ -12,6 +12,10 @@
       {
         "source": "/:path*",
         "destination": "/public/:path*"
+      },
+      {
+        "source": "/api/(.*)",
+        "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/$1"
       }
     ]
   }
