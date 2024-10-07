@@ -7,19 +7,19 @@
 
       "source": "/api/upload",
 
-      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/upload"  // Backend upload path
+      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/upload"
     },
     {
       "source": "/api/selector",
-      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/selector"  // Backend selector path
+      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/selector"
     },
     {
       "source": "/api/render",
-      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/render"  // Backend render path
+      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/render"
     },
     {
       "source": "/api/generate_image",
-      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/generate_image"  // Backend image generation path
+      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/generate_image"
     }
 
   ]
