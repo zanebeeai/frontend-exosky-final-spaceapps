@@ -2,7 +2,11 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/upload", 
+
+    
+
+      "source": "/api/upload",
+
       "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/upload"  // Backend upload path
     },
     {
