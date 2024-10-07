@@ -51,7 +51,7 @@ function sendScreenshotToBackend(blob) {
     const formData = new FormData();
     formData.append('file', blob, 'screenshot.png');
 
-    fetch('http://exosky-backend.eastus.cloudapp.azure.com:5000/upload', {
+    fetch('/api/upload', {
         method: 'POST',
         body: formData,
         mode: 'cors',  // Use 'cors' to handle the response
