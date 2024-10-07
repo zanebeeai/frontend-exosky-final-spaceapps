@@ -1,22 +1,22 @@
 {
-    "public": true,
-    "rewrites": [
-      {
-        "source": "/Data/:path*",
-        "destination": "/public/Data/:path*"
-      },
-      {
-        "source": "/Textures/:path*",
-        "destination": "/public/Textures/:path*"
-      },
-      {
-        "source": "/:path*",
-        "destination": "/public/:path*"
-      },
-      {
-        "source": "/api/(.*)",
-        "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/$1"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/upload", 
+      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/upload"  // Backend upload path
+    },
+    {
+      "source": "/api/selector",
+      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/selector"  // Backend selector path
+    },
+    {
+      "source": "/api/render",
+      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/render"  // Backend render path
+    },
+    {
+      "source": "/api/generate_image",
+      "destination": "http://exosky-backend.eastus.cloudapp.azure.com:5000/generate_image"  // Backend image generation path
+    }
+
+  ]
+}
