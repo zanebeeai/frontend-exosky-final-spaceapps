@@ -9,6 +9,7 @@ const url = new URL(window.location.href);  // Get the full URL
 const params = new URLSearchParams(url.search);  // Parse query string
 
 const planetKey = params.get("key");  // Get the planet key
+console.log(planetKey)
 
 // //fetch planet name
 // fetch ("", {
