@@ -90,6 +90,7 @@ export function renderPlanet (filePath) {
             console.log("VALID RGB CALC");
             [r, g, b] = getRGBfromTemperature(st_temp);
         } else {
+            console.log("less good RGB CALC");
             // Default behavior using magnitude indices when temperature is not available
             const min_offset = 2; // A value to raise the smallest B-V values above 0
             const max = 2; // The typical largest mag index you'd get, following the operations below
