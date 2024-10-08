@@ -73,7 +73,7 @@ function sendScreenshotToBackend(blob) {
             console.error('Error uploading image:', error);
         });
 
-    fetch('http://exosky-backend.eastus.cloudapp.azure.com:5000/generate_image?city=toronto&country=canada', {
+    fetch('/api/generate_image_location', {
         method: 'GET',
         mode: 'cors',  // This allows handling of the response if the server supports it
         headers: {
