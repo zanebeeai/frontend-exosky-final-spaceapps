@@ -87,7 +87,7 @@ export function renderPlanet (filePath) {
     
         // If the temperature is valid, compute the RGB color using blackbody radiation principles
         if (st_temp > 0) {
-            // console.log("VALID RGB CALC");
+            console.log("VALID RGB CALC");
             [r, g, b] = getRGBfromTemperature(st_temp);
         } else {
             // Default behavior using magnitude indices when temperature is not available
