@@ -45,7 +45,7 @@ export function renderPlanet (filePath) {
         new THREE.Vector2(window.innerWidth, window.innerHeight),
         2,   // intensity of bloom DEFAULT 4.2
         1.3, // radius for bloom spread DEFAULT 1.3
-        0.6  // threshold for bloom effect DEFAULT .44
+        0.03  // threshold for bloom effect DEFAULT .44
     );
     composer.addPass(bloomPass);
     
