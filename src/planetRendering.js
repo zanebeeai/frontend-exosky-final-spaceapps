@@ -78,7 +78,7 @@ export function renderPlanet (filePath) {
         var position = radecToCartesian(ra, dec, 1000);
         starPositions.push(position.x, position.y, position.z);
         starSizes.push(size);
-        if ((mag_b + mag_v) < 16.5) {
+        if ((mag_b + mag_v) < 19.5) { //THRESHOLD FOR BRIGHTNESS; DEFAULT 16.5
             starVertices.push(position);
         }
     
@@ -315,6 +315,7 @@ export function renderPlanet (filePath) {
 
     //filePath is the planetName
 
+    // DISABLING TO TRY TEST DATA
     fetch("/api/render?index=" + filePath, {
         method: 'GET',
         mode: 'cors',  // This allows handling of the response if the server supports it
@@ -329,6 +330,7 @@ export function renderPlanet (filePath) {
             // console.log(data);
             const starsData = JSON.parse(data.stars);
             const keyList = Object.keys(starsData);
+            
 
             keyList.forEach(key => {
                 var starData = starsData[key];
