@@ -43,7 +43,7 @@ export function renderPlanet (filePath) {
     composer.addPass(new RenderPass(scene, camera));
     var bloomPass = new UnrealBloomPass(
         new THREE.Vector2(window.innerWidth, window.innerHeight),
-        5.2,   // intensity of bloom DEFAULT 4.2
+        50.2,   // intensity of bloom DEFAULT 4.2
         20.3, // radius for bloom spread DEFAULT 1.3
         0.44  // threshold for bloom effect DEFAULT .44
     );
