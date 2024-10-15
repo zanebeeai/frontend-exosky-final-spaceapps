@@ -538,7 +538,7 @@ export function renderPlanet (filePath) {
     Buttons.showDetailsButton.addEventListener('click', () => {
         stopRotation();
         resetRotation();
-        realisticBloom = false;
+        realisticBloom = true;
         determinePass(realisticBloom);
         handleStarColourSwitch(realisticBloom);
         if (!is_rotate_locked) {
