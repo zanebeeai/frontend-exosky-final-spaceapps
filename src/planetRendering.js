@@ -95,8 +95,8 @@ export function renderPlanet (filePath) {
     var starSizes = [];  // Array for dynamically calculated sizes
     var starVertices = [];  // Store positions for constellation creation
     var constellationCenters = [];  // Track constellation centers
-    let originalStarColors = []; // Bloom-affected colors
-    let tempStarColors = [];     // Colors from getRGBfromTemperature
+    let originalStarColours = []; // Bloom-affected colors
+    let tempStarColours = [];     // Colors from getRGBfromTemperature
 
     function createStar(ra, dec, mag_b, mag_v, st_temp, st_mass, st_lum) {
         const size = 55 * Math.pow(1.22, Math.min(-Math.pow(Math.max(0, (mag_b + mag_v) / 2), 0.9), 0.3));
@@ -119,7 +119,7 @@ export function renderPlanet (filePath) {
         b = Math.min(1, Math.pow(mag_index / max, 4));
 
         // Store these as the original star colors (used when bloom is active)
-        originalStarColors.push(r, g, b);
+        originalStarColours.push(r, g, b);
 
         // If temperature is valid, store temp-based RGB values
         if (st_temp > 0) {
@@ -129,12 +129,12 @@ export function renderPlanet (filePath) {
         }
 
         // Store temperature-based colors
-        tempStarColors.push(r, g, b);
+        tempStarColours.push(r, g, b);
     }
 
-    function handleStarColorSwitch(useTempColors) {
+    function handleStarColourSwitch(useTempColors) {
         // Decide which array to use (either the bloom-based or temperature-based colors)
-        let selectedColors = useTempColors ? tempStarColors : originalStarColors;
+        let selectedColors = useTempColors ? tempStarColours : originalStarColours;
 
         // Update the color attribute of the star geometry
         starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(selectedColors, 3));
@@ -538,6 +538,9 @@ export function renderPlanet (filePath) {
     Buttons.showDetailsButton.addEventListener('click', () => {
         stopRotation();
         resetRotation();
+        realistBloom = false;
+        determinePass(realisticBloom);
+        handleStarColourSwitch(realisticBloom);
         if (!is_rotate_locked) {
             starDetails.showStars();
             is_rotate_locked = true;
@@ -563,7 +566,7 @@ export function renderPlanet (filePath) {
         // Toggle between the two color sets
         realisticBloom = !realisticBloom;
         determinePass(realisticBloom);
-        handleStarColorSwitch(realisticBloom);
+        handleStarColourSwitch(realisticBloom);
     });
 
 }
