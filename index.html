@@ -178,7 +178,7 @@
     
     document.addEventListener('mousemove', resetTimeout);
     resetTimeout();
-    
+    detailsElement.style.display = detailsElement.style.display === 'block';
     // The following are placeholder event listeners that will be connected to your actual JavaScript functions
     
     document.getElementById('clmode').addEventListener('click', function() {
@@ -196,7 +196,7 @@
     
     document.getElementById('show-details').addEventListener('click', function() {
       const detailsElement = document.querySelector('.star-details');
-      detailsElement.style.display = detailsElement.style.display === 'none' ? 'block' : 'none';
+      detailsElement.style.display = detailsElement.style.display === 'block' : 'none';
     });
   </script>
 </body>
