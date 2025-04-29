@@ -20,25 +20,6 @@
       overflow: hidden;
     }
 
-    #UI {
-      position: fixed;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(3px);
-      border-radius: 20px;
-      padding: 4px 8px;
-      display: flex;
-      gap: 4px;
-      z-index: 10;
-      transition: opacity 0.5s ease;
-      opacity: 0.2;
-    }
-
-    #UI:hover {
-      opacity: 1;
-    }
 
     button {
       background: rgba(20, 20, 40, 0.4);
@@ -193,17 +174,7 @@
       document.getElementById('brightness-value').textContent = this.value + '%';
     });
     
-    // Auto-hide controls after period of inactivity
-    let timeout;
-    const controls = document.getElementById('UI');
-    
-    function resetTimeout() {
-      clearTimeout(timeout);
-      controls.style.opacity = '0.2';
-      timeout = setTimeout(function() {
-        controls.style.opacity = '0.1';
-      }, 3000);
-    }
+   
     
     document.addEventListener('mousemove', resetTimeout);
     resetTimeout();
